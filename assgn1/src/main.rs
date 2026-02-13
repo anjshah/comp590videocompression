@@ -19,6 +19,9 @@ use toy_ac::symbol_model::VectorCountSymbolModel;
 use ffmpeg_sidecar::event::StreamTypeSpecificData::Video;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Make sure ffmpeg is installed
+    ffmpeg_sidecar::download::auto_download().unwrap();
+    
     // Command line options
     // -verbose, -no_verbose                Default: -no_verbose
     // -report, -no_report                  Default: -report
